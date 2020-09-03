@@ -1,1 +1,1 @@
-# DevOps-Culture-and-Practice-on-OpenShift
+# DevOps-Culture-and-Practice-with-OpenShift
