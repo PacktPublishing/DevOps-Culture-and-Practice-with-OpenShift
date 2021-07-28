@@ -279,7 +279,7 @@ Page 609:
 ```bash
 wget https://raw.githubusercontent.com/petbattle/pet-battle-nsff/main/requests/tfserving/nsff-negative.json
 wget https://raw.githubusercontent.com/petbattle/pet-battle-nsff/main/requests/tfserving/nsff-positive.json
-HOST=$(kn service describe tensorflowserving-pet-battle-nsff -o url) \
+HOST=$(kn service describe tensorflowserving-pb-nsff -o url) \
   /v1/models/test_model:predict
 curl -s -k -H 'Content-Type: application/json \
   -H 'cache-control: no-cache' \
@@ -289,7 +289,7 @@ curl -s -k -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
   -H 'Accept: application/json' \
   -X POST --data-binary '@nsff-positive.json' $HOST
-HOST=$(kn service describe tensorflowserving-pet-battle-nsff -o url)
+HOST=$(kn service describe tensorflowserving-pb-nsff -o url)
 helm upgrade --install pet-battle-api petbattle/pet-battle-api \
   --version=1.0.15 \
   --set nsff.enabled=true \
